@@ -1,9 +1,9 @@
 # Path-Finding-Algorithms
-This is my take on popular path finding alogrithms ( Dijkstra's and A*). My python implementation is complete but is not very interactive. However, I design my JavaScript implementation as user friendly and interactive as I can. 
+This is my take on popular path finding alogrithms ( Dijkstra's and A*). My python implementation is complete but is not very interactive. However, I designed my JavaScript implementation as user friendly and interactive as I can. 
 
 
 Python Implementation
-- the first presss will mark the start position and second the end position. Every mouse press after the first and second step will create the walls. 
+- the first mouse click will mark the start position and second the end position. Every mouse press after the first and second step will create the walls. 
 - to initiate the path finding program, you'll need to press Space Bar. 
 - the finding only works for one time running. You'll need to reload the python file if you want to run it multiple times.
 
