@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/pf_main.css">
+    <script type="text/javascript" src="../static/js/pf_main.js"></script>
+</head>
+<body onload="squares()">
+    <div class="navigation">
+        <div class="nav_div1">
+            <button class="add_start"><span>Add Start:</span>
+                <div draggable="true" id="start_img" ondragstart="image_dragged()" ondragend="drag_item_square_update()"></div>
+            </button>
+            <button class="add_end"><span>Destination:</span>
+                <div draggable="true" id="goal_img" ondragstart="image_dragged()" ondragend="drag_item_square_update()"></div>
+            </button>
+
+            <div class="choose_algorithm">
+                <select id='selected_algorithm' onchange="selected_algorithm()">
+                    <option value="1">A* Search</option>
+                    <option value="2">Dijkstra's Search</option>
+                </select>
+            </div>
+            <button class='start_btn' onclick="start_pathfinding()"><span>Run</span></button>
+        </div>
+        <button class="reset" onclick="reset()"><span>Reset</span></button>
+    </div>
+    <div id="grid-container" onmouseleave="deselect()"></div>
+    <div id="help-button">
+        <img class="help-button-img" src="../static/image/question-circle.svg">
+        <span class="exit" onclick="remove_help()">x</span>
+    </div>
+    <div class="bottom-nav"></div>
+</body>
+</html>

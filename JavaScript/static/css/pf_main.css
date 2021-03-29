@@ -1,0 +1,214 @@
+:root{
+    --square-defualt-color:  linear-gradient(to bottom, #f8f8ff 0%,#f8f8ff 100%);
+    --square-default-border-color: rgb(220, 220, 220);
+    --walls-color:linear-gradient(135deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+    /*--walls-color:linear-gradient(to bottom, #191919 0%,#191919 100%);*/
+    --walls-border-color: rgba(0,0,0,0.65);
+    --searched-square-color: linear-gradient(to bottom, #bdbdbd  0%,#bdbdbd 100%);
+    --final-path-color: linear-gradient(to bottom, rgba(41,154,11,1) 0%,rgba(41,154,11,1) 100%);
+}
+.choose_algorithm:active{
+    border: #b8e1fc solid 1px;
+}
+
+#selected_algorithm:hover{
+    cursor: pointer;
+}
+
+#selected_algorithm:focus{
+    outline: none;
+}
+
+.start_btn:hover span{
+    display: none;
+}
+
+.start_btn:hover:before {
+    content:"Click to Start"
+}
+
+button:hover, .choose_algorithm:hover{
+    cursor: pointer;
+}
+
+body{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+
+.navigation{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    min-height: 100px;
+    box-sizing: content-box;
+    justify-content: center;
+}
+
+.nav_div1{
+    display: flex;
+}
+
+
+.bottom-nav{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    box-shadow: inset 0 0.6em 0.7em 0 rgba(0,0,0,0.17);
+    height: 50px;
+}
+
+#grid-container{
+    display: grid;
+    max-width: 100%;
+    grid-template-rows: repeat(20, 1fr);
+    grid-template-columns: repeat(60, minmax(0,1fr));
+    background-color: grey;
+    box-shadow: 0 -0.6em 1em -0.35em rgba(0,0,0,0.17);
+    margin-top: 15px;
+}
+
+.square{
+    display:flex;
+    justify-content: flex-start;
+    background: var(--square-defualt-color);
+    border: 1px solid var(--square-default-border-color);
+    aspect-ratio: 1 / 1;
+    padding: 0;
+}
+
+
+
+
+#start_img, #goal_img{
+    max-height: 45px;
+    max-width: 45px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    transition: all 1s ease-in-out;
+}
+
+#goal_img{
+    background: linear-gradient(135deg, rgba(243,226,199,1) 0%,rgba(193,158,103,1) 50%,rgba(182,141,76,1) 51%,rgba(233,212,179,1) 100%);
+}
+
+#start_img{
+    background: linear-gradient(135deg, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%);
+}
+
+
+#start_img:hover, #goal_img:hover{
+    transform: scale(1.1);
+}
+
+
+
+.add_start, .add_end , .start_btn{
+	box-shadow:inset 0 1px 0 0 #bbdaf7;
+    outline: none;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	color:#ffffff;
+	font-weight:bold;
+    padding: 1em 1em;
+	text-decoration:none;
+	text-shadow:0 1px 0 #528ecc;
+    width: 100px;
+    margin: 5px 5px 0 5px;
+}
+
+.reset {
+    box-shadow:inset 0 1px 0 0 #f7bbbb;
+    outline: none;
+	background:linear-gradient(to bottom, #ff7979 5%, #e53737 100%);
+	border-radius:6px;
+	border:1px solid #f38484;
+	color:#ffffff;
+	font-weight:bold;
+    padding: 1em 1em;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc5252;
+    width: 100px;
+    margin: 5px 5px 0 5px;
+}
+
+
+.choose_algorithm{
+    display: flex;
+    box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	border-radius:6px;
+	border:1px solid #84bbf3;
+    margin: 5px 5px 0 5px;
+    padding: 2em 1em;
+    align-items: center;
+}
+
+select{
+    background: transparent;
+    color:#ffffff;
+	font-weight:bold;
+    padding: 1em 1em;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+    border: white 1px solid;
+}
+
+select option{
+    box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    padding: 1em 1em;
+	background:transparent;
+    color: black;
+    text-align: center;
+}
+
+.start_btn{
+    transition: content 4s ease-in-out;
+}
+
+#help-button{
+    position: fixed;
+    display: inline-flex;
+    cursor: pointer;
+    bottom: 40px;
+    right: 40px;
+    max-height: 30px;
+    width: 30px;
+    background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    overflow: visible;
+}
+
+#help-button:hover{
+    transform: scale(1.05);
+}
+
+
+
+.help-button-img {
+    margin: 5px;
+}
+
+
+.exit{
+    font-family: Arial;
+    position: relative;
+    color: white;
+    background: linear-gradient(to bottom, #424547 5%, #363636 100%);
+    top: -2px;
+    right: 6px;
+    border: 1px solid #363636;
+    line-height: 8px;
+    min-width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    overflow:hidden;
+}
+
